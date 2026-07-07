@@ -16,15 +16,24 @@ const typewriterLines = [
   "I don't play the game; I own the board.",
 ];
 
-function updateViewCount() {
+async function updateViewCount() {
   if (!viewCount) return;
 
-  const storageKey = "hardikgarg-profile-views";
-  const baseViews = 1393;
-  const current = Number(localStorage.getItem(storageKey) || baseViews);
-  const next = current + 1;
-  localStorage.setItem(storageKey, String(next));
-  viewCount.textContent = next.toLocaleString("en-US");
+  const counterKey = "hardikgargok_hardikgarg_dev_profile_views";
+  const counterUrl = `https://countapi.mileshilliard.com/api/v1/hit/${counterKey}`;
+
+  try {
+    const response = await fetch(counterUrl, { cache: "no-store" });
+    if (!response.ok) throw new Error("Counter request failed");
+
+    const data = await response.json();
+    const next = Number(data.value);
+    if (!Number.isFinite(next)) throw new Error("Counter value missing");
+
+    viewCount.textContent = next.toLocaleString("en-US");
+  } catch {
+    viewCount.textContent = Number(viewCount.textContent.replaceAll(",", "") || 1395).toLocaleString("en-US");
+  }
 }
 
 updateViewCount();
