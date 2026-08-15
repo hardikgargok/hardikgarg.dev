@@ -288,18 +288,6 @@ Every project is an opportunity to learn something new.
 
 ---
 
-## 📊 GitHub Activity
-
-<p align="center">
-
-<img src="https://github-stats-extended.vercel.app/api?username=hardikgargok&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" width="49%" alt="Hardik Garg GitHub Stats">
-
-<img src="https://streak-stats.demolab.com/?user=hardikgargok&theme=tokyonight&hide_border=true" width="49%" alt="Hardik Garg GitHub Streak">
-
-</p>
-
----
-
 ## 🧰 Tools I Use
 
 <p align="center">
